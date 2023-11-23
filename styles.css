@@ -175,13 +175,7 @@ html {
     width: 60%;
   }
 
-  .cadre {
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 10px;
-    max-width: 300px;
-    margin: auto;
-  }
+
 
   .profile-social-links li {
     list-style: none;
