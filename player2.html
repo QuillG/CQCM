@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<aside class="profile-card">
+  <header>
+    <!-- here’s the avatar -->
+    <a target="_blank" href="#">
+      <img
+        src="img/profil1.png"
+        class="hoverZoomLink">
+    </a>
+
+    <!-- the username -->
+    <h1>
+      PLayer 2
+    </h1>
+  </header>
+  <!-- some social links to show off -->
+  <ul class="profile-social-links">
+    <li>
+      <img src="img/fb.png" alt="Facebook">
+      <div>
+        <input type="text" class="form-control count" placeholder="0" id="inputFacebook">
+        <!-- <button class="btn btn-outline-danger" type="button" id="btnDel">X</button> -->
+        <div>
+          <button type="button" class="btn btn-outline-success" id="btn+5Facebook">+5</button>
+          <button type="button" class="btn btn-outline-danger" id="btn-10Facebook">-10</button>
+        </div>
+      </div>
+
+    </li>
+    <li>
+      <img src="img/insta.png" alt="Instagram">
+      <div>
+        <input type="text" class="form-control count" placeholder="0" id="inputInstagram">
+        <!-- <button class="btn btn-outline-danger" type="button" id="btnDel">X</button> -->
+        <div>
+          <button type="button" class="btn btn-outline-success" id="btn+5Instagram">+5</button>
+          <button type="button" class="btn btn-outline-danger" id="btn-10Instagram">-10</button>
+        </div>
+      </div>
+    </li>
+    <li>
+      <img src="img/Tiktok.png" alt="TikTok">
+      <div>
+        <input type="text" class="form-control count" placeholder="0" id="inputTikTok">
+        <!-- <button class="btn btn-outline-danger" type="button" id="btnDel">X</button> -->
+        <div>
+          <button type="button" class="btn btn-outline-success" id="btn+5TikTok">+5</button>
+          <button type="button" class="btn btn-outline-danger" id="btn-10TikTok">-10</button>
+        </div>
+      </div>
+    </li>
+    <li>
+      <img src="img/linkedin.png" alt="Facebook">
+      <div>
+        <input type="text" class="form-control count" placeholder="0" id="inputLinkedin">
+        <!-- <button class="btn btn-outline-danger" type="button" id="btnDel">X</button> -->
+        <div>
+          <button type="button" class="btn btn-outline-success" id="btn+5Linkedin">+5</button>
+          <button type="button" class="btn btn-outline-danger" id="btn-10Linkedin">-10</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-primary col-5" id="btnGoal">Monthly goals ! +50 </button>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-outline-warning col-5" id="btnQuestion">Question +5 </button>
+  </div>
+  <div class="cadre  mt-3">
+    <div>
+      <h1 class="text-center" id="textTotal">Total follower</h1>
+      <h1 class="text-center" id="total">0</h1>
+    </div>
+  </div>
+</aside>
+
+<script>
+  let inputFacebook = document.getElementById("inputFacebook");
+  let inputInstagram = document.getElementById("inputInstagram");
+  let inputTikTok = document.getElementById("inputTikTok");
+  let inputLinkedin = document.getElementById("inputLinkedin");
+  let btnPlusFacebook = document.getElementById("btn+5Facebook");
+  let btnMoinsFacebook = document.getElementById("btn-10Facebook");
+  let btnDelFacebook = document.getElementById("btnDel");
+  let btnPlusInstagram = document.getElementById("btn+5Instagram");
+  let btnMoinsInstagram = document.getElementById("btn-10Instagram");
+  let btnPlusTikTok = document.getElementById("btn+5TikTok");
+  let btnMoinsTikTok = document.getElementById("btn-10TikTok");
+  let btnPlusLinkedin = document.getElementById("btn+5Linkedin");
+  let btnMoinsLinkedin = document.getElementById("btn-10Linkedin");
+  let inputTotal = document.getElementById("total");
+  let btnGoal = document.getElementById("btnGoal");
+  let btnQuestion = document.getElementById("btnQuestion");
+  let scorefb = 0;
+  let scoreInsta = 0;
+  let scoreTikTok = 0;
+  let scoreLinkedin = 0;
+  let scoreGoal = 0
+  let scoreQuestion = 0;
+  btnPlusFacebook.addEventListener("click", function () {
+    scorefb += 5;
+    inputFacebook.value = scorefb;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+  });
+  btnMoinsFacebook.addEventListener("click", function () {
+    if (inputFacebook.value >= 10) {
+      scorefb -= 10;
+    } else if (inputFacebook.value == 5) {
+      scorefb -= 5;
+    }
+    inputFacebook.value = scorefb;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+  });
+  btnPlusInstagram.addEventListener("click", function () {
+    scoreInsta += 5;
+    inputInstagram.value = scoreInsta;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+  });
+  btnMoinsInstagram.addEventListener("click", function () {
+    if (inputInstagram.value >= 10) {
+      scoreInsta -= 10;
+    } else if (inputInstagram.value == 5) {
+      scoreInsta -= 5;
+    }
+    inputInstagram.value = scoreInsta;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+  });
+  btnPlusTikTok.addEventListener("click", function () {
+    scoreTikTok += 5;
+    inputTikTok.value = scoreTikTok;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+
+  });
+  btnMoinsTikTok.addEventListener("click", function () {
+    if (inputTikTok.value >= 10) {
+      scoreTikTok -= 10;
+    } else if (inputTikTok.value == 5) {
+      scoreTikTok -= 5;
+    }
+    inputTikTok.value = scoreTikTok;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+  });
+  btnPlusLinkedin.addEventListener("click", function () {
+    scoreLinkedin += 5;
+    inputLinkedin.value = scoreLinkedin;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+
+  });
+  btnMoinsLinkedin.addEventListener("click", function () {
+    if (inputLinkedin.value >= 10) {
+      scoreLinkedin -= 10;
+    } else if (inputLinkedin.value == 5) {
+      scoreLinkedin -= 5;
+    }
+    inputLinkedin.value = scoreLinkedin;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+  });
+  btnGoal.addEventListener("click", function () {
+    scoreGoal += 50;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+  });
+  btnQuestion.addEventListener("click", function () {
+    scoreQuestion += 5;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
+  });
+</script>
