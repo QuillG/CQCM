@@ -117,7 +117,7 @@
   btnPlusFacebook.addEventListener("click", function () {
     scorefb += 5;
     inputFacebook.value = scorefb;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
   });
   btnMoinsFacebook.addEventListener("click", function () {
     if (inputFacebook.value >= 10) {
@@ -126,12 +126,12 @@
       scorefb -= 5;
     }
     inputFacebook.value = scorefb;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
   });
   btnPlusInstagram.addEventListener("click", function () {
     scoreInsta += 5;
     inputInstagram.value = scoreInsta;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
   });
   btnMoinsInstagram.addEventListener("click", function () {
     if (inputInstagram.value >= 10) {
@@ -140,12 +140,12 @@
       scoreInsta -= 5;
     }
     inputInstagram.value = scoreInsta;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
   });
   btnPlusTikTok.addEventListener("click", function () {
     scoreTikTok += 5;
     inputTikTok.value = scoreTikTok;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
 
   });
   btnMoinsTikTok.addEventListener("click", function () {
@@ -155,12 +155,12 @@
       scoreTikTok -= 5;
     }
     inputTikTok.value = scoreTikTok;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
   });
   btnPlusLinkedin.addEventListener("click", function () {
     scoreLinkedin += 5;
     inputLinkedin.value = scoreLinkedin;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
 
   });
   btnMoinsLinkedin.addEventListener("click", function () {
@@ -170,11 +170,11 @@
       scoreLinkedin -= 5;
     }
     inputLinkedin.value = scoreLinkedin;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
   });
   btnGoal.addEventListener("click", function () {
     scoreGoal += 50;
-    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal;
+    inputTotal.innerText = scorefb + scoreInsta + scoreTikTok + scoreLinkedin + scoreGoal + scoreQuestion;
   });
   btnQuestion.addEventListener("click", function () {
     scoreQuestion += 5;
